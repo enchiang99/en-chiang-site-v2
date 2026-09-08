@@ -3,118 +3,114 @@ title: 自然成像
 date: 2025-07-01
 date_label: 2025.07
 albums:
-- title: 儲存遺失 / 保留美好
-  link: null
-  photos:
-  - src: https://enchiang.com/images/R0005653.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0005032.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0005460.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0005736.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0005892.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0005905.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0007019.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0007020.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0007025.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0007325.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0008145.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0004154.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0008130.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0008701.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0008094.JPG
-    caption: null
-- title: 鑲嵌關係
-  link: null
-  photos:
-  - src: https://enchiang.com/images/IMG_2532.jpeg
-    caption: null
-  - src: https://enchiang.com/images/IMG_9755.jpeg
-    caption: null
-  - src: https://enchiang.com/images/R0000989.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0001075.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0001256.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0001465.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0005828.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0008432.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0008621.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0008627.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0008815.JPG
-    caption: null
-  - src: https://enchiang.com/images/DSCF0862.jpeg
-    caption: null
-  - src: https://enchiang.com/images/IMG_1156.jpeg
-    caption: null
-  - src: https://enchiang.com/images/R0009399.JPG
-    caption: null
-- title: 心的住所
-  link: null
-  photos:
-  - src: https://enchiang.com/images/32664956-A078-42D9-926A-F69882911EEB.jpeg
-    caption: null
-  - src: https://enchiang.com/images/R0000502.jpeg
-    caption: null
-  - src: https://enchiang.com/images/R0009093.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0009096.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0009097.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0009104.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0009105.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0000488.jpeg
-    caption: null
-  - src: https://enchiang.com/images/R0009107.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0009278.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0009282.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0009284.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0009379.JPG
-    caption: null
-  - src: https://enchiang.com/images/IMG_9032.jpeg
-    caption: null
-- title: 僅此一次
-  link: null
-  photos:
-  - src: https://enchiang.com/images/R0007500.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0009527.JPG
-    caption: null
-  - src: https://enchiang.com/images/2C55BD89-DB77-415C-86E5-C0660D9A281C.jpeg
-    caption: null
-  - src: https://enchiang.com/images/CB58F87B-0995-41C7-85AC-28573D2BFACE.jpeg
-    caption: null
-  - src: https://enchiang.com/images/DSCF0938.jpeg
-    caption: null
-  - src: https://enchiang.com/images/DSCF0943.jpeg
-    caption: null
-  - src: https://enchiang.com/images/DSCF0953.jpeg
-    caption: null
+  - title: 儲存遺失 / 保留美好
+    link: null
+    photos:
+      - src: https://enchiang.com/images/R0005653.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0005032.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0005460.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0005736.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0005892.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0005905.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0007019.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0007020.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0007025.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0007325.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0008145.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0004154.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0008701.JPG
+        caption: null
+  - title: 鑲嵌關係
+    link: null
+    photos:
+      - src: https://enchiang.com/images/IMG_2532.jpeg
+        caption: null
+      - src: https://enchiang.com/images/IMG_9755.jpeg
+        caption: null
+      - src: https://enchiang.com/images/R0000989.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0001075.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0001256.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0001465.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0005828.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0008432.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0008621.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0008627.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0008815.JPG
+        caption: null
+      - src: https://enchiang.com/images/DSCF0862.jpeg
+        caption: null
+      - src: https://enchiang.com/images/IMG_1156.jpeg
+        caption: null
+      - src: https://enchiang.com/images/R0009399.JPG
+        caption: null
+  - title: 心的住所
+    link: null
+    photos:
+      - src: https://enchiang.com/images/32664956-A078-42D9-926A-F69882911EEB.jpeg
+        caption: null
+      - src: https://enchiang.com/images/R0000502.jpeg
+        caption: null
+      - src: https://enchiang.com/images/R0009093.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0009096.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0009097.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0009104.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0009105.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0000488.jpeg
+        caption: null
+      - src: https://enchiang.com/images/R0009107.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0009278.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0009282.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0009284.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0009379.JPG
+        caption: null
+      - src: https://enchiang.com/images/IMG_9032.jpeg
+        caption: null
+  - title: 僅此一次
+    link: null
+    photos:
+      - src: https://enchiang.com/images/R0007500.JPG
+        caption: null
+      - src: https://enchiang.com/images/R0009527.JPG
+        caption: null
+      - src: https://enchiang.com/images/2C55BD89-DB77-415C-86E5-C0660D9A281C.jpeg
+        caption: null
+      - src: https://enchiang.com/images/CB58F87B-0995-41C7-85AC-28573D2BFACE.jpeg
+        caption: null
+      - src: https://enchiang.com/images/DSCF0938.jpeg
+        caption: null
+      - src: https://enchiang.com/images/DSCF0943.jpeg
+        caption: null
+      - src: https://enchiang.com/images/DSCF0953.jpeg
+        caption: null
 ---
 關於日常｜ABOUT LIFE
 
