@@ -26,6 +26,7 @@ layout: default
   {% endif %}
 
   {% if page.albums %}
+  <div class="article-albums-breakout">
   <div class="article-albums">
     {% for album in page.albums %}
     <div class="biz-album">
@@ -52,6 +53,7 @@ layout: default
       </div>
     </div>
     {% endfor %}
+  </div>
   </div>
   {% endif %}
 </div>

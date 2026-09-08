@@ -283,9 +283,13 @@
     font-size:12.5px; letter-spacing:0.06em;
   }
 
-  /* ---------- 文章內相簿：兩本一排 + 輪播 ---------- */
-  .article-albums{ display:grid; grid-template-columns:repeat(2,1fr); gap:30px; margin-top:36px; }
-  @media (max-width:700px){ .article-albums{ grid-template-columns:1fr; } }
+  /* ---------- 文章內相簿：跳脫窄版內文欄，用較寬的版面顯示，兩本一排 + 輪播 ---------- */
+  .article-albums-breakout{ width:100vw; position:relative; left:50%; transform:translateX(-50%); }
+  .article-albums{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:36px;
+    max-width:1000px; margin:36px auto 0; padding:0 8vw; box-sizing:border-box;
+  }
+  @media (max-width:700px){ .article-albums{ grid-template-columns:1fr; padding:0 6vw; } }
   .album-carousel{ position:relative; margin-top:14px; overflow:hidden; }
   .album-carousel-track{ display:flex; transition:transform .5s ease; }
   .album-carousel-slide{ flex:0 0 100%; margin:0; }
