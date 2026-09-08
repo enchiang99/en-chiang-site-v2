@@ -4,7 +4,7 @@ url: "https://enchiang.com"
 # baseurl：正式站（有自己網域）留空字串就好。
 # 如果是先放到 https://帳號.github.io/repo名稱/ 這種子路徑測試，
 # 把下面改成 "/repo名稱"（例如 "/enchiang-site-v2"），存檔後全站連結會自動加上這段路徑。
-baseurl: ""
+baseurl: "/en-chiang-site-v2"
 lang: zh-Hant
 # 分享到 FB／LINE／IG 時顯示的預設縮圖，跟原網站一致
 image: /images/hero.jpeg
