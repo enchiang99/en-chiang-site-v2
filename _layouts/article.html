@@ -11,7 +11,7 @@ layout: default
   <a class="article-back" href="{{ site.baseurl }}/{{ back_anchor }}">← 回到首頁</a>
   <h1>{{ page.title }}</h1>
   <div class="article-date">{{ page.date_label | default: page.date }}</div>
-  {% if page.cover_image %}<img class="article-cover" src="{{ page.cover_image }}" alt="{{ page.title }}">{% endif %}
+  {% if page.cover_image %}<img class="article-cover" src="{% include resolve_image.html src=page.cover_image %}" alt="{{ page.title }}">{% endif %}
   <div class="article-body">
     {{ content }}
   </div>
@@ -36,7 +36,7 @@ layout: default
         <div class="album-carousel-track">
           {% for photo in album.photos %}
           <figure class="album-carousel-slide">
-            <img src="{{ photo.src }}" alt="{{ photo.caption | default: album.title }}" loading="lazy">
+            <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy">
             {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
           </figure>
           {% endfor %}

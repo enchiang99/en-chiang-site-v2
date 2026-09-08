@@ -5,7 +5,7 @@ title: null
 {% assign s = site.data.site %}
 
 <section class="hero" id="hero">
-  <img id="img-hero" src="{{ s.hero.image }}" alt="{{ s.hero.image_alt }}">
+  <img id="img-hero" src="{% include resolve_image.html src=s.hero.image %}" alt="{{ s.hero.image_alt }}">
   <div class="hero-lines"><div class="v v1"></div><div class="v v2"></div><div class="h"></div></div>
   <div class="hero-text">
     <div class="label">{{ s.hero.label }}</div>
@@ -52,7 +52,7 @@ title: null
   <div class="recent-shoots-grid">
     {% for item in s.recent_shoots.items %}
     <figure class="recent-shoots-item" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 80 }}">
-      <img src="{{ item.image }}" alt="{{ item.caption }}" loading="lazy">
+      <img src="{% include resolve_image.html src=item.image %}" alt="{{ item.caption }}" loading="lazy">
       <figcaption>{{ item.caption }}</figcaption>
     </figure>
     {% endfor %}
