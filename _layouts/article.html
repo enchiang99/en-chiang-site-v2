@@ -4,7 +4,7 @@ layout: default
 {% case page.menu_group %}
   {% when "about-en" %}{% assign back_anchor = "#about-en" %}
   {% when "about-daily" %}{% assign back_anchor = "#about-daily" %}
-  {% when "journal" %}{% assign back_anchor = "#journal" %}
+  {% when "journal" %}{% assign back_anchor = "#about-daily" %}
   {% else %}{% assign back_anchor = "" %}
 {% endcase %}
 <div class="article-inner">
@@ -26,21 +26,79 @@ layout: default
   {% endif %}
 
   {% if page.albums %}
-  <div class="biz-albums article-albums">
+  <div class="article-albums">
     {% for album in page.albums %}
     <div class="biz-album">
       {% if album.title %}<div class="album-title">{{ album.title }}</div>{% endif %}
       {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
-      <div class="album-photo-grid">
-        {% for photo in album.photos %}
-        <figure class="album-photo">
-          <img src="{{ photo.src }}" alt="{{ photo.caption | default: album.title }}" loading="lazy">
-          {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
-        </figure>
-        {% endfor %}
+      <div class="album-carousel" data-autoplay="4500">
+        <div class="album-carousel-track">
+          {% for photo in album.photos %}
+          <figure class="album-carousel-slide">
+            <img src="{{ photo.src }}" alt="{{ photo.caption | default: album.title }}" loading="lazy">
+            {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+          </figure>
+          {% endfor %}
+        </div>
+        {% if album.photos.size > 1 %}
+        <button class="album-carousel-btn album-carousel-prev" aria-label="上一張" onclick="albumCarouselMove(this, -1)">‹</button>
+        <button class="album-carousel-btn album-carousel-next" aria-label="下一張" onclick="albumCarouselMove(this, 1)">›</button>
+        <div class="album-carousel-dots">
+          {% for photo in album.photos %}
+          <span class="album-carousel-dot{% if forloop.first %} active{% endif %}" onclick="albumCarouselGoTo(this, {{ forloop.index0 }})"></span>
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
   </div>
   {% endif %}
 </div>
+
+<script>
+  /* ---------- 相簿輪播：自動播放 + 手動點左右箭頭／小圓點 ---------- */
+  (function(){
+    function setup(carousel){
+      var track = carousel.querySelector('.album-carousel-track');
+      var slides = carousel.querySelectorAll('.album-carousel-slide');
+      var dots = carousel.querySelectorAll('.album-carousel-dot');
+      var index = 0;
+      var delay = parseInt(carousel.getAttribute('data-autoplay'), 10) || 4500;
+      var timer = null;
+
+      function render(){
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach(function(d, i){ d.classList.toggle('active', i === index); });
+      }
+      function goTo(i){
+        index = (i + slides.length) % slides.length;
+        render();
+      }
+      function next(){ goTo(index + 1); }
+      function resetTimer(){
+        if(timer) clearInterval(timer);
+        if(slides.length > 1) timer = setInterval(next, delay);
+      }
+
+      carousel._albumCarousel = { goTo: goTo, next: next, resetTimer: resetTimer };
+      render();
+      resetTimer();
+    }
+    document.querySelectorAll('.album-carousel').forEach(setup);
+  })();
+
+  function albumCarouselMove(btn, dir){
+    var carousel = btn.closest('.album-carousel');
+    if(!carousel || !carousel._albumCarousel) return;
+    var api = carousel._albumCarousel;
+    api.goTo((carousel.querySelector('.album-carousel-dot.active') ? Array.prototype.indexOf.call(carousel.querySelectorAll('.album-carousel-dot'), carousel.querySelector('.album-carousel-dot.active')) : 0) + dir);
+    api.resetTimer();
+  }
+  function albumCarouselGoTo(dot, i){
+    var carousel = dot.closest('.album-carousel');
+    if(!carousel || !carousel._albumCarousel) return;
+    carousel._albumCarousel.goTo(i);
+    carousel._albumCarousel.resetTimer();
+  }
+</script>

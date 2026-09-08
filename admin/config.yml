@@ -136,14 +136,14 @@ collections:
             name: "categories"
             widget: list
             fields:
-              - { label: "代碼（不要跟別的重複，例如 sub-001）", name: "id", widget: string }
-              - { label: "顯示名稱", name: "label", widget: string }
+              - { label: "顯示名稱（新增分類只需要填這個）", name: "label", widget: string }
+              - { label: "代碼（舊分類才有，新分類不用填）", name: "id", widget: string, required: false }
           - label: "相簿"
             name: "albums"
             widget: list
             fields:
               - { label: "相簿標題", name: "title", widget: string }
-              - { label: "屬於哪個子分類（填上面的代碼）", name: "category", widget: string, required: false }
+              - { label: "屬於哪個子分類（直接填上面打的「顯示名稱」文字即可，一字不差）", name: "category", widget: string, required: false }
               - { label: "外部連結（選填，例如 IG）", name: "link", widget: string, required: false }
               - label: "照片"
                 name: "photos"
@@ -170,13 +170,13 @@ collections:
             name: "categories"
             widget: list
             fields:
-              - { label: "代碼", name: "id", widget: string }
-              - { label: "顯示名稱", name: "label", widget: string }
+              - { label: "顯示名稱（新增分類只需要填這個）", name: "label", widget: string }
+              - { label: "代碼（舊分類才有，新分類不用填）", name: "id", widget: string, required: false }
           - label: "影片"
             name: "videos"
             widget: list
             fields:
               - { label: "YouTube 影片 ID（網址 v= 後面那串）", name: "youtube_id", widget: string }
               - { label: "說明文字", name: "caption", widget: string, required: false }
-              - { label: "屬於哪個分類（填上面的代碼）", name: "category", widget: string, required: false }
-              - { label: "子分類（選填）", name: "subcategory", widget: string, required: false }
+              - { label: "屬於哪個分類（直接填分類的「顯示名稱」文字即可，一字不差）", name: "category", widget: string, required: false }
+              - { label: "子分類名稱（選填，直接打文字，不用代碼）", name: "subcategory", widget: string, required: false }
