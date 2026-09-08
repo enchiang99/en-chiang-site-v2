@@ -82,6 +82,18 @@ collections:
               - { label: "Email", name: "email", widget: string }
               - { label: "版權文字", name: "copyright", widget: string }
               - { label: "版權旁邊的標語", name: "tagline", widget: string }
+          - label: "最新拍攝花絮"
+            name: "recent_shoots"
+            widget: object
+            fields:
+              - { label: "小標籤", name: "label", widget: string }
+              - { label: "標題", name: "heading", widget: string }
+              - label: "照片（建議 3～6 張）"
+                name: "items"
+                widget: list
+                fields:
+                  - { label: "照片", name: "image", widget: image }
+                  - { label: "說明文字", name: "caption", widget: string }
 
   # ---------- 以下三個 collection，就是選單裡「關於EN／關於日常／關於愛」底下的子文章 ----------
   - name: "about_en"

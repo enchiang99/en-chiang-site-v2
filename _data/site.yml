@@ -59,3 +59,18 @@ footer:
   email: "en.hi.light@gmail.com"
   copyright: "© 2026 En Chiang"
   tagline: "台中｜自然人像、寵物攝影、ai自動化"
+
+recent_shoots:
+  label: "Recent Flash"
+  heading: "最新拍攝花絮"
+  items:
+    - image: /images/R0009606.JPG
+      caption: "午後的光，剛好落在對的地方。"
+    - image: /images/daily-1.jpeg
+      caption: "拍攝現場，等一個自然的表情。"
+    - image: /images/IMG_8792.jpeg
+      caption: "牠今天特別乖，配合度滿分。"
+    - image: /images/DSCF1319.jpeg
+      caption: "樂團演出，聲音跟畫面一起震動。"
+    - image: /images/R0004154.JPG
+      caption: "生活側拍，不刻意的瞬間最真實。"

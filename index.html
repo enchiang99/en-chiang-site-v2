@@ -43,3 +43,18 @@ title: null
     {% endfor %}
   </div>
 </section>
+
+<section id="recent-shoots">
+  <div class="section-head">
+    <div class="label">{{ s.recent_shoots.label }}</div>
+    <h2>{{ s.recent_shoots.heading }}</h2>
+  </div>
+  <div class="recent-shoots-grid">
+    {% for item in s.recent_shoots.items %}
+    <figure class="recent-shoots-item" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 80 }}">
+      <img src="{{ item.image }}" alt="{{ item.caption }}" loading="lazy">
+      <figcaption>{{ item.caption }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
