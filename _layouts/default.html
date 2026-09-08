@@ -258,7 +258,8 @@
   .article-cover{ width:100%; margin-bottom:40px; }
 
   /* ---------- 相簿（文章內、關於商業共用） ---------- */
-  .biz-albums{ display:flex; flex-direction:column; gap:56px; margin-top:50px; }
+  .biz-albums{ display:grid; grid-template-columns:repeat(2,1fr); gap:44px; margin-top:50px; }
+  @media (max-width:700px){ .biz-albums{ grid-template-columns:1fr; } }
   .biz-album .album-title{ font-family:'Noto Serif TC',serif; font-size:18px; margin-bottom:6px; }
   .biz-album .album-link{ display:inline-block; font-size:12.5px; color:var(--ink-soft); border-bottom:1px solid var(--line); margin-bottom:18px; }
   .album-photo-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; margin-top:14px; }
@@ -402,6 +403,52 @@
     if(!menuBtn) return;
     menuBtn.classList.add('visible');
   })();
+
+  /* ---------- 相簿輪播（共用）：自動播放 + 手動點左右箭頭／小圓點，任何頁面只要有 .album-carousel 就會生效 ---------- */
+  (function(){
+    function setup(carousel){
+      var track = carousel.querySelector('.album-carousel-track');
+      var slides = carousel.querySelectorAll('.album-carousel-slide');
+      var dots = carousel.querySelectorAll('.album-carousel-dot');
+      var index = 0;
+      var delay = parseInt(carousel.getAttribute('data-autoplay'), 10) || 4500;
+      var timer = null;
+
+      function render(){
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach(function(d, i){ d.classList.toggle('active', i === index); });
+      }
+      function goTo(i){
+        index = (i + slides.length) % slides.length;
+        render();
+      }
+      function next(){ goTo(index + 1); }
+      function resetTimer(){
+        if(timer) clearInterval(timer);
+        if(slides.length > 1) timer = setInterval(next, delay);
+      }
+
+      carousel._albumCarousel = { goTo: goTo, next: next, resetTimer: resetTimer };
+      render();
+      resetTimer();
+    }
+    document.querySelectorAll('.album-carousel').forEach(setup);
+  })();
+
+  function albumCarouselMove(btn, dir){
+    var carousel = btn.closest('.album-carousel');
+    if(!carousel || !carousel._albumCarousel) return;
+    var activeDot = carousel.querySelector('.album-carousel-dot.active');
+    var currentIndex = activeDot ? Array.prototype.indexOf.call(carousel.querySelectorAll('.album-carousel-dot'), activeDot) : 0;
+    carousel._albumCarousel.goTo(currentIndex + dir);
+    carousel._albumCarousel.resetTimer();
+  }
+  function albumCarouselGoTo(dot, i){
+    var carousel = dot.closest('.album-carousel');
+    if(!carousel || !carousel._albumCarousel) return;
+    carousel._albumCarousel.goTo(i);
+    carousel._albumCarousel.resetTimer();
+  }
 
   /* ---------- MOTION：平滑捲動（Lenis）／捲動淡入（AOS） ---------- */
   (function(){
