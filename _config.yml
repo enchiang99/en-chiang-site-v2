@@ -53,3 +53,6 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - incoming-zips
+  - .github
+  - scripts
