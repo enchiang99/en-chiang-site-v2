@@ -1,0 +1,99 @@
+---
+layout: default
+title: 關於商業
+permalink: /business/
+---
+{% assign bd = site.data.business['brand-design'] %}
+{% assign ai = site.data.business['ai-automation'] %}
+{% assign brand = site.data.business['brand'] %}
+{% assign video = site.data.business['video'] %}
+
+<div class="business-inner">
+  <a class="article-back" href="{{ site.baseurl }}/">← 回到首頁</a>
+  <div class="section-head" style="text-align:left; padding-top:0; margin-bottom:10px;">
+    <div class="label">Business</div>
+    <h2>關於商業</h2>
+  </div>
+
+  {% comment %} ---------- 創意平面 Creative Graphics ---------- {% endcomment %}
+  <div class="biz-section" id="biz-brand-design">
+    <h2>創意平面 Creative Graphics</h2>
+    <div class="video-subtags">
+      {% for cat in bd.categories %}<span class="video-subtag">{{ cat.label }}</span>{% endfor %}
+    </div>
+    <div class="biz-albums">
+      {% for album in bd.albums %}
+      <div class="biz-album">
+        <div class="album-title">{{ album.title }}</div>
+        {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
+        <div class="album-photo-grid">
+          {% for photo in album.photos %}
+          <figure class="album-photo"><img src="{{ photo.src }}" alt="{{ album.title }}" loading="lazy">{% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}</figure>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% comment %} ---------- AI自動化 AI Automation ---------- {% endcomment %}
+  <div class="biz-section" id="biz-ai-automation">
+    <h2>AI自動化｜AI Automation</h2>
+    <div class="video-subtags">
+      {% for cat in ai.categories %}<span class="video-subtag">{{ cat.label }}</span>{% endfor %}
+    </div>
+    <div class="biz-albums">
+      {% for album in ai.albums %}
+      <div class="biz-album">
+        <div class="album-title">{{ album.title }}</div>
+        {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
+        <div class="album-photo-grid">
+          {% for photo in album.photos %}
+          <figure class="album-photo"><img src="{{ photo.src }}" alt="{{ album.title }}" loading="lazy">{% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}</figure>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% comment %} ---------- 影像 Photography（有主分類 tabs：形象／醫療／餐飲／婚禮／花藝） ---------- {% endcomment %}
+  <div class="biz-section" id="biz-brand">
+    <h2>影像 Photography</h2>
+    <div class="video-tabs">
+      {% for cat in brand.categories %}<span class="video-tab">{{ cat.label }}</span>{% endfor %}
+    </div>
+    <div class="biz-albums">
+      {% for album in brand.albums %}
+      <div class="biz-album">
+        <div class="album-title">{{ album.title }}</div>
+        {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
+        <div class="album-photo-grid">
+          {% for photo in album.photos %}
+          <figure class="album-photo"><img src="{{ photo.src }}" alt="{{ album.title }}" loading="lazy">{% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}</figure>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% comment %} ---------- 影音 Video（餐廳／醫療／文創） ---------- {% endcomment %}
+  <div class="biz-section" id="biz-video">
+    <h2>影音 Video</h2>
+    <div class="video-tabs">
+      {% for cat in video.categories %}<span class="video-tab">{{ cat.label }}</span>{% endfor %}
+    </div>
+    <div class="video-grid">
+      {% for v in video.videos %}
+      <div class="video-card">
+        <a class="video-thumb-frame" href="https://www.youtube.com/watch?v={{ v.youtube_id }}" target="_blank" rel="noopener">
+          <img class="video-cover" loading="lazy" src="https://img.youtube.com/vi/{{ v.youtube_id }}/hqdefault.jpg" alt="">
+          <div class="video-play-overlay"></div>
+        </a>
+        <div class="video-card-meta">{{ v.caption }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
