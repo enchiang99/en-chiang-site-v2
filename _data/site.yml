@@ -1,0 +1,66 @@
+hero:
+  image: /images/hero.jpeg
+  image_alt: "台中樂團演出攝影 En Chiang 拍攝現場"
+  label: "生活的模樣"
+  title_line1: "讓視角代表生活，"
+  title_line2: "讓生活代表我們。"
+  cta_text: "READ MORE"
+  cta_link: /archive.html
+
+quote:
+  text: "嘿，你相信許願嗎？"
+  lines:
+    - "長大後，才變得像個小孩。"
+    - "無數地跌宕起伏，就像海浪。"
+    - "有時沉溺、有時站在浪尖，"
+    - "不成為勇敢的人，成為設置停損點的人。"
+    - "讓經過你的所有事物都是流動的。"
+
+about_daily:
+  label: "About En"
+  heading: "關於我"
+  services:
+    - num: "01"
+      title: "Hi, Nice to meet you"
+      tagline: "我成為我 你成為你"
+      desc_lines:
+        - "若有幸能遇見，我們交換彼此的故事。"
+        - "自然地對談，當下就是最好的樣子。"
+        - "台中｜人像捕捉"
+    - num: "02"
+      title: "自然成像"
+      tagline: "無論遺失和美好 都有它的珍貴"
+      desc_lines:
+        - "若我沒有音樂，靈魂是死的。"
+        - "所有的救贖，都能從音符中找到答案。"
+        - "台中｜生活側拍"
+    - num: "03"
+      title: "無條件地愛"
+      tagline: "與貓咪一起成長的練習"
+      desc_lines:
+        - "你做你自己，而我無條件地愛你。"
+        - "只有增加，不曾減少。"
+        - "台中｜寵物攝影"
+
+journal_teaser:
+  label: "All of me"
+  heading: "關於所有"
+  entries:
+    - title: "[About En]"
+      date_label: "[talk it]"
+      link: /#about-en
+    - title: "[About Life]"
+      date_label: "[listen it]"
+      link: /#about-daily
+    - title: "[About Love]"
+      date_label: "[feel it]"
+      link: /#journal
+
+footer:
+  label: "Contact Me"
+  heading: "聯繫方式"
+  ig_handle: "@enchiang_"
+  ig_link: "https://www.instagram.com/enchiang_?igsh=MWhlNTE3b2FibGY5dQ%3D%3D&utm_source=qr"
+  email: "en.hi.light@gmail.com"
+  copyright: "© 2026 En Chiang"
+  tagline: "台中｜自然人像、寵物攝影、ai自動化"

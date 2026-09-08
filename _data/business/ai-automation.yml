@@ -1,0 +1,17 @@
+categories:
+- id: sub-1788772697857
+  label: 孝子貓 | omg_workhard
+albums:
+- title: 孝子貓 | Tik tok
+  category: sub-1788772697857
+  link: https://www.instagram.com/omg_workhard/
+  photos:
+  - src: https://enchiang.com/images/omg-workhard.jpeg
+    caption: https://www.youtube.com/@omg_workhard/shorts
+  # ⚠️ 這張原本在你檔案裡是用「內嵌檔案」方式存的照片（不是網址連結），
+  # 我已經把它還原成一張真正的圖檔，放進這次交付資料夾裡的 images/ 資料夾，
+  # 上傳到 GitHub 之後路徑會是 /images/omg-workhard-ff651496fa.jpg，可以正常顯示。
+  - src: /images/omg-workhard-ff651496fa.jpg
+    caption: https://www.instagram.com/omg_workhard/
+  - src: /images/omg-workhard-ff651496fa.jpg
+    caption: https://www.tiktok.com/@omg_workhard711
