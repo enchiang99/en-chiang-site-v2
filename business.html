@@ -31,10 +31,24 @@ permalink: /business/
       <div class="biz-album" data-category="{{ album_key }}">
         <div class="album-title">{{ album.title }}</div>
         {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
-        <div class="album-photo-grid">
-          {% for photo in album.photos %}
-          <figure class="album-photo"><img src="{{ photo.src }}" alt="{{ album.title }}" loading="lazy" onclick="openLightbox(this.src)">{% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}</figure>
-          {% endfor %}
+        <div class="album-carousel" data-autoplay="4500">
+          <div class="album-carousel-track">
+            {% for photo in album.photos %}
+            <figure class="album-carousel-slide">
+              <img src="{{ photo.src }}" alt="{{ photo.caption | default: album.title }}" loading="lazy" onclick="openLightbox(this.src)">
+              {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+            </figure>
+            {% endfor %}
+          </div>
+          {% if album.photos.size > 1 %}
+          <button class="album-carousel-btn album-carousel-prev" aria-label="上一張" onclick="albumCarouselMove(this, -1)">‹</button>
+          <button class="album-carousel-btn album-carousel-next" aria-label="下一張" onclick="albumCarouselMove(this, 1)">›</button>
+          <div class="album-carousel-dots">
+            {% for photo in album.photos %}
+            <span class="album-carousel-dot{% if forloop.first %} active{% endif %}" onclick="albumCarouselGoTo(this, {{ forloop.index0 }})"></span>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
@@ -82,10 +96,24 @@ permalink: /business/
       <div class="biz-album" data-category="{{ album_key }}">
         <div class="album-title">{{ album.title }}</div>
         {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
-        <div class="album-photo-grid">
-          {% for photo in album.photos %}
-          <figure class="album-photo"><img src="{{ photo.src }}" alt="{{ album.title }}" loading="lazy" onclick="openLightbox(this.src)">{% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}</figure>
-          {% endfor %}
+        <div class="album-carousel" data-autoplay="4500">
+          <div class="album-carousel-track">
+            {% for photo in album.photos %}
+            <figure class="album-carousel-slide">
+              <img src="{{ photo.src }}" alt="{{ photo.caption | default: album.title }}" loading="lazy" onclick="openLightbox(this.src)">
+              {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+            </figure>
+            {% endfor %}
+          </div>
+          {% if album.photos.size > 1 %}
+          <button class="album-carousel-btn album-carousel-prev" aria-label="上一張" onclick="albumCarouselMove(this, -1)">‹</button>
+          <button class="album-carousel-btn album-carousel-next" aria-label="下一張" onclick="albumCarouselMove(this, 1)">›</button>
+          <div class="album-carousel-dots">
+            {% for photo in album.photos %}
+            <span class="album-carousel-dot{% if forloop.first %} active{% endif %}" onclick="albumCarouselGoTo(this, {{ forloop.index0 }})"></span>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
