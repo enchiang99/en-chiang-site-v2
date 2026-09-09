@@ -15,6 +15,13 @@
       <a href="{{ post.url | relative_url }}" class="menu-sub-link">{{ post.title }}</a>
       {% endfor %}
     </div>
+    <div class="menu-album-list">
+      {% for post in site.about_en %}
+      {% for album in post.albums %}
+      <a href="{{ post.url | relative_url }}" class="menu-album-item">📷 {{ album.title }}</a>
+      {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 
   {% comment %} 關於日常 {% endcomment %}
@@ -30,6 +37,13 @@
       <a href="{{ post.url | relative_url }}" class="menu-sub-link">{{ post.title }}</a>
       {% endfor %}
     </div>
+    <div class="menu-album-list">
+      {% for post in daily_posts %}
+      {% for album in post.albums %}
+      <a href="{{ post.url | relative_url }}" class="menu-album-item">📷 {{ album.title }}</a>
+      {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 
   {% comment %} 關於愛（內部代號沿用原網站的 journal） {% endcomment %}
@@ -42,6 +56,13 @@
     <div class="menu-sublist">
       {% for post in site.about_love %}
       <a href="{{ post.url | relative_url }}" class="menu-sub-link">{{ post.title }}</a>
+      {% endfor %}
+    </div>
+    <div class="menu-album-list">
+      {% for post in site.about_love %}
+      {% for album in post.albums %}
+      <a href="{{ post.url | relative_url }}" class="menu-album-item">📷 {{ album.title }}</a>
+      {% endfor %}
       {% endfor %}
     </div>
   </div>
