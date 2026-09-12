@@ -3,29 +3,27 @@ title: Hi, Nice to meet you.
 date: 2026-07-01
 date_label: 2026.07
 albums:
-- title: 第三者視角
-  link: null
-  photos:
-  - src: https://enchiang.com/images/006ECA4B-E393-4CEE-AAB4-D2E61E6C7C70.jpeg
-    caption: null
-  - src: https://enchiang.com/images/1EB08218-62BA-45BA-84C6-747970DBF375.jpeg
-    caption: null
-  - src: https://enchiang.com/images/article-hi-1.jpeg
-    caption: null
-  - src: https://enchiang.com/images/IMG_1157.jpeg
-    caption: null
-  - src: https://enchiang.com/images/IMG_2839.jpeg
-    caption: null
-  - src: https://enchiang.com/images/IMG_8433.jpeg
-    caption: null
-  - src: https://enchiang.com/images/IMG_9509.jpeg
-    caption: null
-  - src: https://enchiang.com/images/R0000243.jpeg
-    caption: null
-  - src: https://enchiang.com/images/R0008130.JPG
-    caption: null
-  - src: https://enchiang.com/images/R0008418.JPG
-    caption: null
+  - title: 第三者視角
+    link: null
+    photos:
+      - src: https://enchiang.com/images/006ECA4B-E393-4CEE-AAB4-D2E61E6C7C70.jpeg
+        caption: null
+      - src: https://enchiang.com/images/1EB08218-62BA-45BA-84C6-747970DBF375.jpeg
+        caption: null
+      - src: https://enchiang.com/images/article-hi-1.jpeg
+        caption: null
+      - src: https://enchiang.com/images/IMG_1157.jpeg
+        caption: null
+      - src: https://enchiang.com/images/IMG_2839.jpeg
+        caption: null
+      - src: https://enchiang.com/images/IMG_8433.jpeg
+        caption: null
+      - src: https://enchiang.com/images/IMG_9509.jpeg
+        caption: null
+      - src: https://enchiang.com/images/R0000243.jpeg
+        caption: null
+      - src: https://enchiang.com/images/R0008418.JPG
+        caption: null
 ---
 我是EN,
 
