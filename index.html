@@ -51,10 +51,16 @@ title: null
   </div>
   <div class="recent-shoots-grid">
     {% for item in s.recent_shoots.items %}
+    {% capture shoot_img %}<img src="{% include resolve_image.html src=item.image %}" alt="{{ item.caption }}" loading="lazy">{% endcapture %}
     <figure class="recent-shoots-item" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 80 }}">
-      <img src="{% include resolve_image.html src=item.image %}" alt="{{ item.caption }}" loading="lazy">
+      {% if item.link %}<a href="{{ item.link | relative_url }}">{{ shoot_img }}</a>{% else %}{{ shoot_img }}{% endif %}
       <figcaption>{{ item.caption }}</figcaption>
     </figure>
     {% endfor %}
   </div>
+  {% if s.recent_shoots.more_link %}
+  <div style="text-align:center; margin-top:10px;">
+    <a href="{{ s.recent_shoots.more_link | relative_url }}" class="btn">{{ s.recent_shoots.more_text | default: "查看更多 →" }}</a>
+  </div>
+  {% endif %}
 </section>

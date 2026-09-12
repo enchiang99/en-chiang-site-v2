@@ -31,31 +31,20 @@ permalink: /business/
       <div class="biz-album" data-category="{{ album_key }}">
         <div class="album-title">{{ album.title }}</div>
         {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
-        <div class="album-carousel" data-autoplay="4500">
-          <div class="album-carousel-track">
-            {% for photo in album.photos %}
-            <figure class="album-carousel-slide">
-              <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" onclick="openLightbox(this.src)">
-              {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
-            </figure>
-            {% endfor %}
-          </div>
-          {% if album.photos.size > 1 %}
-          <button class="album-carousel-btn album-carousel-prev" aria-label="上一張" onclick="albumCarouselMove(this, -1)">‹</button>
-          <button class="album-carousel-btn album-carousel-next" aria-label="下一張" onclick="albumCarouselMove(this, 1)">›</button>
-          <div class="album-carousel-dots">
-            {% for photo in album.photos %}
-            <span class="album-carousel-dot{% if forloop.first %} active{% endif %}" onclick="albumCarouselGoTo(this, {{ forloop.index0 }})"></span>
-            {% endfor %}
-          </div>
-          {% endif %}
+        <div class="album-photo-grid">
+          {% for photo in album.photos %}
+          <figure class="album-photo">
+            <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" onclick="openLightbox(this.src)">
+            {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+          </figure>
+          {% endfor %}
         </div>
       </div>
       {% endfor %}
     </div>
   </div>
 
-  {% comment %} ---------- AI自動化 AI Automation：一張主圖 + 立即查看按鈕，不是整組照片牆 ---------- {% endcomment %}
+  {% comment %} ---------- AI自動化 AI Automation：一張主圖 + 社群連結圖示（IG／YT／TikTok／FB／Threads，各自可設定連結） ---------- {% endcomment %}
   <div class="biz-section" id="biz-ai-automation">
     <h2>AI自動化｜AI Automation</h2>
     <div class="video-subtags" data-filter-group="ai-automation">
@@ -75,6 +64,24 @@ permalink: /business/
         <figure class="album-photo album-photo--main"><img src="{% include resolve_image.html src=main_photo.src %}" alt="{{ album.title }}" loading="lazy" onclick="openLightbox(this.src)"></figure>
         {% endif %}
         {% if album.link %}<a class="album-link album-link--button" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
+        {% if album.social_links %}
+        <div class="album-social-links">
+          {% for sl in album.social_links %}
+          {% if sl.url %}
+          <a class="social-icon-btn social-icon-{{ sl.platform }}" href="{{ sl.url }}" target="_blank" rel="noopener" aria-label="{{ sl.platform }}">
+            {% case sl.platform %}
+            {% when 'instagram' %}<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+            {% when 'youtube' %}<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"></rect><path d="M10.3 9.4L15 12L10.3 14.6Z" fill="currentColor" stroke="none"></path></svg>
+            {% when 'tiktok' %}<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v10.2a3.3 3.3 0 1 1-2.6-3.23"></path><path d="M14 4c.4 2.2 2 3.7 4 4"></path></svg>
+            {% when 'facebook' %}<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.6c-.9 0-1.4.5-1.4 1.5v2h3l-.4 3h-2.6v6"></path></svg>
+            {% when 'threads' %}<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"></circle><path d="M9 8.5c3.5-1 6.2.2 6.2 3.6 0 2.6-1.7 4.1-4 4.1-1.6 0-2.6-.8-2.6-1.9 0-1.5 1.7-2 3.6-2 1.9 0 3.2.6 3.2 2.3"></path></svg>
+            {% else %}<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"></circle></svg>
+            {% endcase %}
+          </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
@@ -96,24 +103,13 @@ permalink: /business/
       <div class="biz-album" data-category="{{ album_key }}">
         <div class="album-title">{{ album.title }}</div>
         {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
-        <div class="album-carousel" data-autoplay="4500">
-          <div class="album-carousel-track">
-            {% for photo in album.photos %}
-            <figure class="album-carousel-slide">
-              <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" onclick="openLightbox(this.src)">
-              {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
-            </figure>
-            {% endfor %}
-          </div>
-          {% if album.photos.size > 1 %}
-          <button class="album-carousel-btn album-carousel-prev" aria-label="上一張" onclick="albumCarouselMove(this, -1)">‹</button>
-          <button class="album-carousel-btn album-carousel-next" aria-label="下一張" onclick="albumCarouselMove(this, 1)">›</button>
-          <div class="album-carousel-dots">
-            {% for photo in album.photos %}
-            <span class="album-carousel-dot{% if forloop.first %} active{% endif %}" onclick="albumCarouselGoTo(this, {{ forloop.index0 }})"></span>
-            {% endfor %}
-          </div>
-          {% endif %}
+        <div class="album-photo-grid">
+          {% for photo in album.photos %}
+          <figure class="album-photo">
+            <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" onclick="openLightbox(this.src)">
+            {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+          </figure>
+          {% endfor %}
         </div>
       </div>
       {% endfor %}

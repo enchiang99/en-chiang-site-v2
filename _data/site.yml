@@ -54,12 +54,19 @@ footer:
   copyright: © 2026 En Chiang
   tagline: 台中｜自然人像、寵物攝影、ai自動化
 recent_shoots:
-  label: What's NEW
-  heading: 最新消息
+  label: Business
+  heading: 關於商業
+  more_text: 查看更多商業作品 →
+  more_link: /business/
+  # 下面 3 張是先放的示範內容，換成你自己想主打的商業作品照片／文字即可，
+  # 想連到哪個作品都可以自己填 link（例如某個分類錨點 /business/#biz-brand）。
   items:
-    - image: /images/1EB08218-62BA-45BA-84C6-747970DBF375.jpeg
-      caption: 調皮貓咪，前幾天睡到跌下來，半夜送急診。
-    - image: /images/R0009527.JPG
-      caption: 最期待的9月，有著滿滿的演出。
-    - image: /images/R0000502.jpeg
-      caption: I WISH.
+    - image: https://enchiang.com/images/R0008965.JPG
+      caption: 個人形象｜Personal Image
+      link: /business/#biz-brand
+    - image: https://enchiang.com/images/R0003321.jpg
+      caption: 燒肉天皇｜Tennoyakiniku
+      link: /business/#biz-brand
+    - image: https://enchiang.com/images/1768026543000_R0010078.jpg
+      caption: 昕澄診所｜Omni Clinic
+      link: /business/#biz-brand

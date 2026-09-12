@@ -71,18 +71,48 @@ collections:
               - { label: "Email", name: "email", widget: string }
               - { label: "版權文字", name: "copyright", widget: string }
               - { label: "版權旁邊的標語", name: "tagline", widget: string }
-          - label: "最新拍攝花絮"
+          - label: "首頁商業精選（原本的「最新消息」，改成關於商業的精選作品）"
             name: "recent_shoots"
             widget: object
+            hint: "這一區在首頁靠下方，用來精選幾張你想主打的商業作品。圖片、文字都自己選，選完會顯示在首頁，並附一個連到「關於商業」整頁的按鈕。"
             fields:
               - { label: "小標籤", name: "label", widget: string }
               - { label: "標題", name: "heading", widget: string }
-              - label: "照片（建議 3～6 張）"
+              - { label: "按鈕文字（連到關於商業整頁，例如「查看更多」）", name: "more_text", widget: string, required: false }
+              - { label: "按鈕連結", name: "more_link", widget: string, required: false, hint: "通常填 /business/，或某個分類錨點，例如 /business/#biz-brand" }
+              - label: "精選作品（建議 3～6 張，自己選要放哪幾張、寫什麼文字）"
                 name: "items"
                 widget: list
                 fields:
                   - { label: "照片", name: "image", widget: image }
                   - { label: "說明文字", name: "caption", widget: string }
+                  - { label: "點這張圖要連去哪裡（選填，例如某個商業作品的相簿頁）", name: "link", widget: string, required: false }
+
+  # ---------- 📦 整批上傳照片：專門放這個，不用再去 images 資料夾裡找相簿名稱複製連結 ----------
+  - name: "batch_upload"
+    label: "📦 整批上傳照片（zip，自動解壓縮）"
+    files:
+      - name: "batch"
+        label: "上傳新的一批照片"
+        file: "_data/uploads-log.yml"
+        fields:
+          - label: "上傳紀錄"
+            name: "batches"
+            widget: list
+            required: false
+            hint: >
+              把一整批照片先壓成一個 zip（不用先解壓縮），按下面「Add」上傳。存檔、發布之後，
+              等 1～2 分鐘讓 GitHub 自動處理完（可以到 GitHub 網頁的 Actions 分頁看有沒有變成綠勾勾），
+              這批照片就會自動進到 images/ 資料夾。之後不管是「關於EN／日常／愛」的相簿，
+              還是「關於商業」的相簿，只要點照片欄位的「Choose an image」，就能直接從縮圖清單挑剛剛上傳的照片，
+              不用再手動去 images 資料夾找檔名、複製網址。
+            fields:
+              - label: "zip 檔案"
+                name: "zip_file"
+                widget: file
+                media_folder: "/incoming-zips"
+                public_folder: "/incoming-zips"
+              - { label: "備註（選填，方便自己識別是哪一批，例如「9月樂團拍攝」）", name: "note", widget: string, required: false }
 
   # ---------- 以下三個 collection，就是選單裡「關於EN／關於日常／關於愛」底下的子文章 ----------
   - name: "about_en"
@@ -101,12 +131,16 @@ collections:
         name: "albums"
         widget: list
         required: false
+        summary: "{{fields.title}}"
+        collapsed: true
         fields:
           - { label: "相簿標題", name: "title", widget: string, required: false }
           - { label: "外部連結（選填）", name: "link", widget: string, required: false }
           - label: "照片"
             name: "photos"
             widget: list
+            summary: "{{fields.caption}}"
+            collapsed: true
             fields:
               - { label: "照片", name: "src", widget: image }
               - { label: "說明文字（選填）", name: "caption", widget: string, required: false }
@@ -136,12 +170,16 @@ collections:
           - label: "子分類標籤（例如 美髮／餐飲）"
             name: "categories"
             widget: list
+            summary: "{{fields.label}}"
+            collapsed: true
             fields:
               - { label: "顯示名稱（新增分類只需要填這個）", name: "label", widget: string }
               - { label: "代碼（舊分類才有，新分類不用填）", name: "id", widget: string, required: false }
           - label: "相簿"
             name: "albums"
             widget: list
+            summary: "{{fields.title}}"
+            collapsed: true
             fields:
               - { label: "相簿標題", name: "title", widget: string }
               - { label: "屬於哪個子分類（直接填上面打的「顯示名稱」文字即可，一字不差）", name: "category", widget: string, required: false }
@@ -149,6 +187,8 @@ collections:
               - label: "照片"
                 name: "photos"
                 widget: list
+                summary: "{{fields.caption}}"
+                collapsed: true
                 fields:
                   - { label: "照片", name: "src", widget: image }
                   - { label: "說明文字（選填）", name: "caption", widget: string, required: false }
@@ -156,7 +196,50 @@ collections:
       - name: "ai-automation"
         label: "② AI自動化｜AI Automation"
         file: "_data/business/ai-automation.yml"
-        fields: *photo_biz_fields
+        fields:
+          - label: "子分類標籤"
+            name: "categories"
+            widget: list
+            summary: "{{fields.label}}"
+            collapsed: true
+            fields:
+              - { label: "顯示名稱（新增分類只需要填這個）", name: "label", widget: string }
+              - { label: "代碼（舊分類才有，新分類不用填）", name: "id", widget: string, required: false }
+          - label: "相簿"
+            name: "albums"
+            widget: list
+            summary: "{{fields.title}}"
+            collapsed: true
+            fields:
+              - { label: "相簿標題", name: "title", widget: string }
+              - { label: "屬於哪個子分類（直接填上面打的「顯示名稱」文字即可，一字不差）", name: "category", widget: string, required: false }
+              - { label: "立即查看（主要連結，選填）", name: "link", widget: string, required: false }
+              - label: "社群圖示（IG／YT／TikTok／FB／Threads，各自可設定連結）"
+                name: "social_links"
+                widget: list
+                required: false
+                summary: "{{fields.platform}}"
+                collapsed: true
+                hint: "哪一個平台的「連結」欄位是空的，前台就不會顯示那顆圖示。"
+                fields:
+                  - label: "平台"
+                    name: "platform"
+                    widget: select
+                    options:
+                      - { label: "Instagram", value: "instagram" }
+                      - { label: "YouTube", value: "youtube" }
+                      - { label: "TikTok", value: "tiktok" }
+                      - { label: "Facebook", value: "facebook" }
+                      - { label: "Threads", value: "threads" }
+                  - { label: "連結", name: "url", widget: string, required: false }
+              - label: "照片"
+                name: "photos"
+                widget: list
+                summary: "{{fields.caption}}"
+                collapsed: true
+                fields:
+                  - { label: "照片", name: "src", widget: image }
+                  - { label: "說明文字（選填）", name: "caption", widget: string, required: false }
 
       - name: "brand"
         label: "③ 影像 Photography（形象／醫療／餐飲／婚禮／花藝）"
@@ -170,12 +253,16 @@ collections:
           - label: "分類（餐廳／醫療／文創）"
             name: "categories"
             widget: list
+            summary: "{{fields.label}}"
+            collapsed: true
             fields:
               - { label: "顯示名稱（新增分類只需要填這個）", name: "label", widget: string }
               - { label: "代碼（舊分類才有，新分類不用填）", name: "id", widget: string, required: false }
           - label: "影片"
             name: "videos"
             widget: list
+            summary: "{{fields.caption}}"
+            collapsed: true
             fields:
               - { label: "YouTube 影片 ID（網址 v= 後面那串）", name: "youtube_id", widget: string }
               - { label: "說明文字", name: "caption", widget: string, required: false }
