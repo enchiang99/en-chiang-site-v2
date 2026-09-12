@@ -37,10 +37,9 @@ collections:
             widget: object
             fields:
               - { label: "引言主文", name: "text", widget: string }
-              - label: "描述（每行一句）"
-                name: "lines"
-                widget: list
-                field: { label: "這一行", name: "line", widget: string }
+              - label: "描述（可以直接打好幾行，存檔後會自動一行一段，不用像以前分開一格一格輸入）"
+                name: "desc"
+                widget: text
           - label: "關於我／關於所有（已合併，三張卡片）"
             name: "about_daily"
             widget: object
@@ -56,10 +55,9 @@ collections:
                   - { label: "標題", name: "title", widget: string }
                   - { label: "連結（連到哪篇文章）", name: "link", widget: string, required: false }
                   - { label: "副標", name: "tagline", widget: string }
-                  - label: "描述（每行一句）"
-                    name: "desc_lines"
-                    widget: list
-                    field: { label: "這一行", name: "line", widget: string }
+                  - label: "描述（可以直接打好幾行，存檔後會自動一行一段）"
+                    name: "desc_text"
+                    widget: text
           - label: "頁尾聯繫方式"
             name: "footer"
             widget: object
@@ -174,7 +172,7 @@ collections:
             collapsed: true
             fields:
               - { label: "顯示名稱（新增分類只需要填這個）", name: "label", widget: string }
-              - { label: "代碼（舊分類才有，新分類不用填）", name: "id", widget: string, required: false }
+              - { label: "代碼（內部使用，不會顯示，不用理會）", name: "id", widget: hidden, required: false }
           - label: "相簿"
             name: "albums"
             widget: list
@@ -204,7 +202,7 @@ collections:
             collapsed: true
             fields:
               - { label: "顯示名稱（新增分類只需要填這個）", name: "label", widget: string }
-              - { label: "代碼（舊分類才有，新分類不用填）", name: "id", widget: string, required: false }
+              - { label: "代碼（內部使用，不會顯示，不用理會）", name: "id", widget: hidden, required: false }
           - label: "相簿"
             name: "albums"
             widget: list
@@ -257,7 +255,7 @@ collections:
             collapsed: true
             fields:
               - { label: "顯示名稱（新增分類只需要填這個）", name: "label", widget: string }
-              - { label: "代碼（舊分類才有，新分類不用填）", name: "id", widget: string, required: false }
+              - { label: "代碼（內部使用，不會顯示，不用理會）", name: "id", widget: hidden, required: false }
           - label: "影片"
             name: "videos"
             widget: list
@@ -267,4 +265,3 @@ collections:
               - { label: "YouTube 影片 ID（網址 v= 後面那串）", name: "youtube_id", widget: string }
               - { label: "說明文字", name: "caption", widget: string, required: false }
               - { label: "屬於哪個分類（直接填分類的「顯示名稱」文字即可，一字不差）", name: "category", widget: string, required: false }
-              - { label: "子分類名稱（選填，直接打文字，不用代碼）", name: "subcategory", widget: string, required: false }

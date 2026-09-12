@@ -72,9 +72,17 @@
           h(
             "div",
             { className: "desc" },
-            (quote.lines || []).map(function (line, i) {
-              return h("div", { key: i }, line);
-            })
+            (quote.desc || "")
+              .split("\n")
+              .map(function (l) {
+                return l.trim();
+              })
+              .filter(function (l) {
+                return l !== "";
+              })
+              .map(function (line, i) {
+                return h("div", { key: i }, line);
+              })
           )
         ),
         h(

@@ -17,7 +17,8 @@ title: null
 <section class="quote-section" id="about-en">
   <blockquote data-aos="fade-up">{{ s.quote.text }}</blockquote>
   <div class="desc" data-aos="fade-up" data-aos-delay="120">
-    {% for line in s.quote.lines %}<div>{{ line }}</div>{% endfor %}
+    {% assign quote_lines = s.quote.desc | split: "\n" %}
+    {% for line in quote_lines %}{% assign trimmed_line = line | strip %}{% if trimmed_line != "" %}<div>{{ trimmed_line }}</div>{% endif %}{% endfor %}
   </div>
 </section>
 
@@ -38,7 +39,8 @@ title: null
       <h3>{{ item.title }}</h3>
       {% endif %}
       <div class="tagline">{{ item.tagline }}</div>
-      <div class="desc">{% for line in item.desc_lines %}<div>{{ line }}</div>{% endfor %}</div>
+      {% assign svc_lines = item.desc_text | split: "\n" %}
+      <div class="desc">{% for line in svc_lines %}{% assign trimmed_svc_line = line | strip %}{% if trimmed_svc_line != "" %}<div>{{ trimmed_svc_line }}</div>{% endif %}{% endfor %}</div>
     </div>
     {% endfor %}
   </div>

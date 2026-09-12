@@ -1,14 +1,22 @@
 title: "En Chiang｜台中人像寫真・樂團演出紀錄・寵物到府攝影"
 description: "En Chiang，台中攝影師。拍攝台中人像寫真、樂團演出紀錄、寵物到府攝影。不擺拍、不制式，把故事拍成想珍藏的樣子。"
 url: "https://enchiang.com"
-# baseurl：正式站（有自己網域，例如現在的 enchiang.com）留空字串就好。
-# 如果是先放到 https://帳號.github.io/repo名稱/ 這種子路徑測試，
-# 才把下面改成 "/repo名稱"（例如 "/en-chiang-site-v2"），存檔後全站連結會自動加上這段路徑。
-# ⚠️ 2026-09-12 修正：enchiang.com 現在已經是正式網域直接指到這個 repo，
-# 這裡本來還留著測試用的路徑，導致「圖片網址前面多一段 /en-chiang-site-v2」，
-# 只要照片存的是「站內相對路徑」（例如 /images/xxx.jpg）就會抓不到、變成破圖——
-# 用完整網址（https://enchiang.com/images/xxx.jpg）存的照片不受影響，因為完整網址本來就不會被加前綴。
-baseurl: ""
+# baseurl 只能二選一，不能同時支援兩個網址，這是這次「首頁壞了」最可能的原因，麻煩看清楚：
+#
+# 你這次貼的網址是 https://enchiang99.github.io/en-chiang-site-v2/ —— 這是「子路徑」測試網址，
+# 這種網址底下 baseurl 必須是 "/en-chiang-site-v2"（下面已經改成這個），
+# 全站連結、圖片、CSS 才會自動補上 /en-chiang-site-v2 這一段，不然全部都會抓錯路徑。
+#
+# 但如果 enchiang.com 這個正式網域也是接到「同一個」repo，baseurl 就只能留空字串 ""，
+# 兩種情境的設定是互斥的，同一份 _config.yml 沒辦法讓兩個網址同時正常——
+# 這就是為什麼上次為了修正式站把 baseurl 改成空字串之後，這個子路徑測試網址反而「壞了」。
+#
+# 麻煩先確認清楚：https://enchiang99.github.io/en-chiang-site-v2/ 跟 enchiang.com
+# 是不是同一個 repo？如果是同一個 repo、只是一個有接網域一個沒有，正式的做法應該是
+# 「不要再用 github.io 那個子路徑網址測試」，直接看 enchiang.com 本身；
+# 如果這兩個網址其實是兩個不同的 repo（一個正式站、一個測試站），那就完全沒問題，
+# 各自的 repo 裡放各自需要的 baseurl 設定即可，不會互相影響。
+baseurl: "/en-chiang-site-v2"
 lang: zh-Hant
 # 分享到 FB／LINE／IG 時顯示的預設縮圖，跟原網站一致
 image: /images/hero.jpeg
