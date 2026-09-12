@@ -61,7 +61,7 @@ title: null
     {% endfor %}
   </div>
   {% if s.recent_shoots.more_link %}
-  <div style="text-align:center; margin-top:10px;">
+  <div style="text-align:center; margin:32px 0 8px;">
     <a href="{{ s.recent_shoots.more_link | relative_url }}" class="btn">{{ s.recent_shoots.more_text | default: "查看更多 →" }}</a>
   </div>
   {% endif %}

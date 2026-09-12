@@ -83,14 +83,18 @@
     menuBtn.classList.add('visible');
   })();
 
-  /* ---------- 相簿輪播（共用）：自動播放 + 手動點左右箭頭／小圓點，任何頁面只要有 .album-carousel 就會生效 ---------- */
+  /* ---------- 相簿輪播（共用）：任何頁面只要有 .album-carousel 就會生效 ----------
+     有加 data-autoplay="毫秒數" 屬性才會自動播放（例如文章內頁的相簿）；
+     沒有加這個屬性就是純手動（例如關於商業的創意平面／影像），
+     一律從第一張開始，不會自己跳到別張，只有點左右箭頭／小圓點才會換頁 */
   (function(){
     function setup(carousel){
       var track = carousel.querySelector('.album-carousel-track');
       var slides = carousel.querySelectorAll('.album-carousel-slide');
       var dots = carousel.querySelectorAll('.album-carousel-dot');
       var index = 0;
-      var delay = parseInt(carousel.getAttribute('data-autoplay'), 10) || 4500;
+      var hasAutoplay = carousel.hasAttribute('data-autoplay');
+      var delay = hasAutoplay ? (parseInt(carousel.getAttribute('data-autoplay'), 10) || 4500) : 0;
       var timer = null;
 
       function render(){
@@ -104,7 +108,7 @@
       function next(){ goTo(index + 1); }
       function resetTimer(){
         if(timer) clearInterval(timer);
-        if(slides.length > 1) timer = setInterval(next, delay);
+        if(delay > 0 && slides.length > 1) timer = setInterval(next, delay);
       }
 
       carousel._albumCarousel = { goTo: goTo, next: next, resetTimer: resetTimer };

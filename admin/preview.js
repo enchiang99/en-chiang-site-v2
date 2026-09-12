@@ -225,10 +225,10 @@
                 { className: "album-photo album-photo--main", style: { maxWidth: "320px" } },
                 h("img", { src: getAssetUrl(props, mainPhoto.src) })
               ),
-            album.link && h("div", { className: "album-link album-link--button" }, "立即查看 →"),
             h(
               "div",
               { className: "album-social-links" },
+              h("span", { className: "social-hint" }, "點擊 icon 查看"),
               (album.social_links || [])
                 .filter(function (sl) {
                   return sl.url;

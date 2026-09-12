@@ -104,10 +104,9 @@
   /* ---------- 選單：分類下方的相簿名稱清單（比文章小一層，跟 V1 的層級一致） ---------- */
   .menu-album-list{ padding-left:22px; padding-bottom:6px; }
   .menu-album-item{
-    display:block; font-size:11px; letter-spacing:0.03em; color:var(--ink-soft); padding:6px 0;
+    display:block; font-size:9px; letter-spacing:0.03em; color:var(--ink-soft); padding:6px 0;
     font-family:'Noto Sans TC', sans-serif; cursor:pointer;
   }
-  .menu-album-item::before{ content:'—'; margin-right:6px; opacity:0.5; }
   .menu-album-item:hover{ color:var(--ink); }
 
   /* ---------- 選單：影音子分類展開 ---------- */
@@ -212,6 +211,7 @@
   .service h3{ font-size:19px; margin:0 0 8px; font-weight:500; }
 
   /* ---------- 最新拍攝花絮：素面淡入格子，響應式 3/2/1 欄 ---------- */
+  #recent-shoots{ padding-bottom:56px; }
   .recent-shoots-grid{
     display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
     max-width:1100px; margin:36px auto 70px; padding:0 8vw;
@@ -286,7 +286,9 @@
     font-size:12.5px; letter-spacing:0.06em;
   }
   /* ---------- AI自動化：社群連結圖示（IG／YT／TikTok／FB／Threads，逐一可設定連結，沒填就不顯示） ---------- */
-  .album-social-links{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+  /* 「立即查看」按鈕已經被這排圖示取代，這裡只留一句提示文字，不是連結 */
+  .album-social-links{ display:flex; align-items:center; gap:10px; margin-top:14px; flex-wrap:wrap; }
+  .social-hint{ font-size:12.5px; color:var(--ink-soft); margin-right:4px; }
   .social-icon-btn{
     width:38px; height:38px; border-radius:50%; border:1px solid var(--ink);
     display:flex; align-items:center; justify-content:center; color:var(--ink);
@@ -342,7 +344,7 @@
     content:''; width:0; height:0; border-top:11px solid transparent; border-bottom:11px solid transparent;
     border-left:18px solid rgba(233,229,221,0.92);
   }
-  .video-card-meta{ font-size:12.5px; color:var(--ink-soft); margin-top:10px; line-height:1.6; }
+  .video-card-meta{ font-family:'Noto Serif TC',serif; font-size:14px; color:var(--ink); margin-top:10px; line-height:1.6; }
   .article-video-wrap{ margin-top:44px; max-width:480px; }
 
   /* ---------- RESPONSIVE ---------- */
