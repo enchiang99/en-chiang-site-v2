@@ -5,8 +5,6 @@ albums:
   - title: 孝子貓 | omg_workard
     category: sub-1788772697857
     link: https://www.youtube.com/@omg_workhard/shorts
-    # 下面這幾個是「立即查看」旁邊的社群圖示，每個都可以自己開關／改連結：
-    # 只要 url 欄位是空的，前台就不會顯示那顆圖示按鈕。
     social_links:
       - platform: youtube
         url: https://www.youtube.com/@omg_workhard/shorts
@@ -15,13 +13,9 @@ albums:
       - platform: tiktok
         url: https://www.tiktok.com/@omg_workhard711
       - platform: facebook
-        url: ""
+        url: https://www.facebook.com/profile.php?id=61594105254646
       - platform: threads
-        url: ""
+        url: https://www.threads.com/@omg_workhard?igshid=NTc4MTIwNjQ2YQ==
     photos:
       - src: https://enchiang.com/images/omg-workhard.jpeg
-        caption: null
-      - src: /images/1757425153000_R0009960.JPG
-        caption: null
-      - src: /images/DSCF0110.jpg
         caption: null
