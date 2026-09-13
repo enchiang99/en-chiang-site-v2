@@ -14,8 +14,6 @@ albums:
         caption: null
       - src: https://enchiang.com/images/R0005736.JPG
         caption: null
-      - src: https://enchiang.com/images/R0005892.JPG
-        caption: null
       - src: https://enchiang.com/images/R0005905.JPG
         caption: null
       - src: https://enchiang.com/images/R0007019.JPG
