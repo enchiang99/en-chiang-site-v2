@@ -1,6 +1,6 @@
 hero:
   image: https://enchiang.com/images/hero.jpeg
-  image_alt: 台中樂團演出攝影 En Chiang 拍攝現場
+  image_alt: 台中｜自然人像、寵物攝影、個人/品牌經營 ENchiang
   label: 生活的模樣
   title_line1: 讓視角代表生活，
   title_line2: 讓生活代表我們。
@@ -62,8 +62,8 @@ recent_shoots:
       caption: 創意平面｜Creative Graphics，提升品牌辨識度及形象
       link: /business/#biz-brand
     - image: /images/R0003321.jpg
-      caption: 品牌經營｜Branding，從零到有的打造
+      caption: 品牌經營｜Branding，從零到一品牌性打造
       link: /business/#biz-brand
     - image: /images/DSCF9753.jpg
-      caption: IP打造｜半自動化運營
+      caption: 品牌、個人IP打造｜半自動化運營
       link: /business/#biz-brand
