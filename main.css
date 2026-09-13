@@ -260,7 +260,7 @@
   .article-cover{ width:100%; margin-bottom:40px; }
 
   /* ---------- 相簿（文章內、關於商業共用） ---------- */
-  .biz-albums{ display:grid; grid-template-columns:repeat(2,1fr); gap:44px; margin-top:50px; }
+  .biz-albums{ display:grid; grid-template-columns:repeat(2,1fr); gap:44px; margin-top:50px; align-items:start; }
   @media (max-width:700px){ .biz-albums{ grid-template-columns:1fr; } }
   .biz-album .album-title{ font-family:'Noto Serif TC',serif; font-size:18px; margin-bottom:6px; }
   .biz-album .album-link{ display:inline-block; font-size:12.5px; color:var(--ink-soft); border-bottom:1px solid var(--line); margin-bottom:18px; }
@@ -303,9 +303,9 @@
     max-width:1000px; margin:36px auto 0; padding:0 8vw; box-sizing:border-box;
   }
   @media (max-width:700px){ .article-albums{ grid-template-columns:1fr; padding:0 6vw; } }
-  .album-carousel{ position:relative; margin-top:14px; overflow:hidden; }
-  .album-carousel-track{ display:flex; transition:transform .5s ease; }
-  .album-carousel-slide{ flex:0 0 100%; margin:0; }
+  .album-carousel{ position:relative; margin-top:14px; overflow:hidden; width:100%; }
+  .album-carousel-track{ display:flex; width:100%; transition:transform .5s ease; }
+  .album-carousel-slide{ flex:0 0 100%; min-width:0; margin:0; }
   .album-carousel-slide img{ width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
   .album-carousel-slide figcaption{ font-size:11.5px; color:var(--ink-soft); margin-top:6px; }
   .album-carousel-btn{
