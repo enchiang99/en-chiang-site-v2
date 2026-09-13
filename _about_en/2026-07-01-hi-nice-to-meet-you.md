@@ -6,23 +6,23 @@ albums:
   - title: 第三者視角
     link: null
     photos:
-      - src: https://enchiang.com/images/006ECA4B-E393-4CEE-AAB4-D2E61E6C7C70.jpeg
+      - src: /images/v1_1789310752495_006ECA4B-E393-4CEE-AAB4-D2E61E6C7C70.jpeg
         caption: null
-      - src: https://enchiang.com/images/1EB08218-62BA-45BA-84C6-747970DBF375.jpeg
+      - src: /images/v1_1789310752514_1EB08218-62BA-45BA-84C6-747970DBF375.jpeg
         caption: null
-      - src: https://enchiang.com/images/article-hi-1.jpeg
+      - src: /images/v1_1789310752545_article-hi-1.jpeg
         caption: null
-      - src: https://enchiang.com/images/IMG_1157.jpeg
+      - src: /images/v1_1789310752579_IMG_1157.jpeg
         caption: null
-      - src: https://enchiang.com/images/IMG_2839.jpeg
+      - src: /images/v1_1789310752598_IMG_2839.jpeg
         caption: null
-      - src: https://enchiang.com/images/IMG_8433.jpeg
+      - src: /images/v1_1789310752621_IMG_8433.jpeg
         caption: null
-      - src: https://enchiang.com/images/IMG_9509.jpeg
+      - src: /images/v1_1789310752651_IMG_9509.jpeg
         caption: null
-      - src: https://enchiang.com/images/R0000243.jpeg
+      - src: /images/v1_1789310752672_R0000243.jpeg
         caption: null
-      - src: https://enchiang.com/images/R0008418.JPG
+      - src: /images/v1_1789310752701_R0008418.JPG
         caption: null
 ---
 我是EN,

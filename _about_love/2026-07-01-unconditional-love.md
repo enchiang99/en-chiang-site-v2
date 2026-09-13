@@ -6,56 +6,56 @@ albums:
 - title: 巨蟹男 7歲 單身
   link: null
   photos:
-  - src: https://enchiang.com/images/R0000587.jpeg
+  - src: /images/v1_1789310759750_R0000587.jpeg
     caption: null
-  - src: https://enchiang.com/images/R0000589.jpeg
+  - src: /images/v1_1789310759776_R0000589.jpeg
     caption: null
-  - src: https://enchiang.com/images/R0000908.jpeg
+  - src: /images/v1_1789310759797_R0000908.jpeg
     caption: null
-  - src: https://enchiang.com/images/DSCF9798.jpg
+  - src: /images/v1_1789310759818_DSCF9798.jpg
     caption: null
-  - src: https://enchiang.com/images/R0008783.JPG
+  - src: /images/v1_1789310759839_R0008783.JPG
     caption: null
-  - src: https://enchiang.com/images/1757425153000_R0009960.JPG
+  - src: /images/v1_1789310760017_1757425153000_R0009960.JPG
     caption: null
-  - src: https://enchiang.com/images/DSCF0105.jpg
+  - src: /images/v1_1789310760054_DSCF0105.jpg
     caption: null
-  - src: https://enchiang.com/images/DSCF0110.jpg
+  - src: /images/v1_1789310760074_DSCF0110.jpg
     caption: null
-  - src: https://enchiang.com/images/R0009466.JPG
+  - src: /images/v1_1789310760095_R0009466.JPG
     caption: null
-  - src: https://enchiang.com/images/R0001281.JPG
+  - src: /images/v1_1789310760117_R0001281.JPG
     caption: null
-  - src: https://enchiang.com/images/DSCF9753.jpg
+  - src: /images/v1_1789310760278_DSCF9753.jpg
     caption: null
 - title: 你快樂之虞我快樂
   link: null
   photos:
-  - src: https://enchiang.com/images/R0001047.JPG
+  - src: /images/v1_1789310760299_R0001047.JPG
     caption: null
-  - src: https://enchiang.com/images/R0001048.JPG
+  - src: /images/v1_1789310760492_R0001048.JPG
     caption: null
-  - src: https://enchiang.com/images/R0001363.JPG
+  - src: /images/v1_1789310760654_R0001363.JPG
     caption: null
-  - src: https://enchiang.com/images/R0001399.JPG
+  - src: /images/v1_1789310760828_R0001399.JPG
     caption: null
-  - src: https://enchiang.com/images/R0001404.JPG
+  - src: /images/v1_1789310760992_R0001404.JPG
     caption: null
-  - src: https://enchiang.com/images/R0004246.JPG
+  - src: /images/v1_1789310761186_R0004246.JPG
     caption: null
-  - src: https://enchiang.com/images/R0006904.JPG
+  - src: /images/v1_1789310761383_R0006904.JPG
     caption: null
-  - src: https://enchiang.com/images/R0001472.JPG
+  - src: /images/v1_1789310761585_R0001472.JPG
     caption: null
-  - src: https://enchiang.com/images/R0004291.JPG
+  - src: /images/v1_1789310761811_R0004291.JPG
     caption: null
-  - src: https://enchiang.com/images/R0007874.JPG
+  - src: /images/v1_1789310762058_R0007874.JPG
     caption: null
-  - src: https://enchiang.com/images/R0008810.JPG
+  - src: /images/v1_1789310762272_R0008810.JPG
     caption: null
-  - src: https://enchiang.com/images/R0009606.JPG
+  - src: /images/v1_1789310762433_R0009606.JPG
     caption: null
-  - src: https://enchiang.com/images/R0009616.JPG
+  - src: /images/v1_1789310762460_R0009616.JPG
     caption: null
 ---
 人總說，無條件的愛是給予後無所求，至今我仍在迷茫。

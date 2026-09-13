@@ -17,5 +17,5 @@ albums:
       - platform: threads
         url: https://www.threads.com/@omg_workhard?igshid=NTc4MTIwNjQ2YQ==
     photos:
-      - src: https://enchiang.com/images/omg-workhard.jpeg
+      - src: /images/omg-workhard.jpeg
         caption: null
