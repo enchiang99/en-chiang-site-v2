@@ -35,7 +35,11 @@ permalink: /business/
           <div class="album-carousel-track">
             {% for photo in album.photos %}
             <figure class="album-carousel-slide">
-              <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" onclick="openLightbox(this.src)">
+              {% if forloop.first %}
+              <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+              {% else %}
+              <img data-src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+              {% endif %}
               {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
             </figure>
             {% endfor %}
@@ -118,7 +122,11 @@ permalink: /business/
           <div class="album-carousel-track">
             {% for photo in album.photos %}
             <figure class="album-carousel-slide">
-              <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" onclick="openLightbox(this.src)">
+              {% if forloop.first %}
+              <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+              {% else %}
+              <img data-src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+              {% endif %}
               {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
             </figure>
             {% endfor %}
