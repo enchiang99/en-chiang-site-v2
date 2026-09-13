@@ -262,6 +262,14 @@
   /* ---------- 相簿（文章內、關於商業共用） ---------- */
   .biz-albums{ display:grid; grid-template-columns:repeat(2,1fr); gap:44px; margin-top:50px; align-items:start; }
   @media (max-width:700px){ .biz-albums{ grid-template-columns:1fr; } }
+  /* 2026-09-13：真正抓到「忽大忽小」的原因——照片張數多的相簿（例如8~9張），
+     裡面的輪播是用 flex 排的，瀏覽器計算格線欄寬時，會被那些「還沒捲動到看不見」
+     的照片撐開最小寬度需求，導致格線的兩欄沒有真的一樣寬（張數多的那欄變超寬，
+     另一欄被擠窄）。加這行 min-width:0，明確告訴瀏覽器「這個相簿方塊不用管裡面
+     輪播的照片有幾張，就乖乖照格線分配的寬度顯示就好」，兩欄就會真的等寬。
+     已經用實際網頁測試過（個人形象、婚禮兩個相簿寬度從 276px／871px 不等，
+     改完變成兩個都是 335.6px），確認有效。 */
+  .biz-album{ min-width:0; }
   .biz-album .album-title{ font-family:'Noto Serif TC',serif; font-size:18px; margin-bottom:6px; }
   .biz-album .album-link{ display:inline-block; font-size:12.5px; color:var(--ink-soft); border-bottom:1px solid var(--line); margin-bottom:18px; }
   .album-photo-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; margin-top:14px; }
