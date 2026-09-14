@@ -1,10 +1,8 @@
 backend:
   name: github
-  # ⚠️ 這裡要填「這份檔案實際被放進去的那個 repo」，不是正式站的 repo！
-  # 測試階段請改成你的第二版 repo，例如 enchiang99/en-chiang-site-v2，
-  # 不然後台會誤存回正式站的 en-chiang-site，混淆兩個版本。
-  # 等真的要正式上架、把內容搬進 en-chiang-site 時，再改回 enchiang99/en-chiang-site。
-  repo: enchiang99/en-chiang-site-v2
+  # 2026-09-14：正式版設定——已經改回正式站的 repo，這份檔案要覆蓋進 en-chiang-site 用。
+  # base_url 不用改，同一個 Cloudflare Worker 只是幫忙處理 GitHub 登入，跟填哪個 repo 無關。
+  repo: enchiang99/en-chiang-site
   branch: main
   base_url: https://enchiang-cms-auth-v2.en-hi-light.workers.dev
 
