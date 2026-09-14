@@ -13,6 +13,29 @@
 </script>
 {% seo title=false %}
 <title>{% if page.title %}{{ page.title }}｜{% endif %}{{ site.title }}</title>
+<!-- 2026-09-14：JSON-LD 結構化資料，告訴 Google／AI 搜尋引擎「這是誰、提供哪些服務」，
+     內容跟 V1 正式站原本的設定一致，但 IG 連結／Email 改成直接讀後台「聯繫方式」欄位，
+     以後在後台改這兩個欄位，這裡會自動跟著更新，不用另外改程式碼。 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "En Chiang",
+  "jobTitle": "攝影師",
+  "areaServed": "台中市",
+  "url": "{{ site.url }}/",
+  "sameAs": ["{{ site.data.site.footer.ig_link }}"],
+  "email": "{{ site.data.site.footer.email }}",
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "台中人像寫真", "url": "{{ site.url }}/portrait.html" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "台中樂團演出紀錄", "url": "{{ site.url }}/band.html" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "台中寵物到府攝影", "url": "{{ site.url }}/pet.html" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "商業創意平面攝影", "url": "{{ site.url }}/business-brand.html" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "商業人像攝影", "url": "{{ site.url }}/business-portrait.html" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "商業影片製作", "url": "{{ site.url }}/business-video.html" } }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
@@ -88,6 +111,17 @@
      沒有加這個屬性就是純手動（例如關於商業的創意平面／影像），
      一律從第一張開始，不會自己跳到別張，只有點左右箭頭／小圓點才會換頁 */
   (function(){
+    /* 相簿照片：除了第一張以外，其餘照片先用 data-src 存著網址、不會馬上下載，
+       真的滑到那一張才把 data-src 換成 src、瀏覽器才會真的去抓這張圖，
+       這樣一個相簿裡沒被看到的照片就不會白白佔頻寬、拖慢整頁載入速度 */
+    function loadSlideImage(slide){
+      if(!slide) return;
+      var img = slide.querySelector('img[data-src]');
+      if(img){
+        img.src = img.getAttribute('data-src');
+        img.removeAttribute('data-src');
+      }
+    }
     function setup(carousel){
       var track = carousel.querySelector('.album-carousel-track');
       var slides = carousel.querySelectorAll('.album-carousel-slide');
@@ -103,6 +137,9 @@
       }
       function goTo(i){
         index = (i + slides.length) % slides.length;
+        loadSlideImage(slides[index]);
+        var nextSlide = slides[(index + 1) % slides.length];
+        if(nextSlide) loadSlideImage(nextSlide); // 預先載入下一張，切換時比較不會有空白
         render();
       }
       function next(){ goTo(index + 1); }
