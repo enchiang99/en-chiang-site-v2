@@ -74,6 +74,8 @@ permalink: /business/
             {% if album.video_id %}
             <span class="album-carousel-dot" onclick="albumCarouselGoTo(this, {{ album.photos.size }})"></span>
             {% endif %}
+          </div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
@@ -182,6 +184,8 @@ permalink: /business/
             {% if album.video_id %}
             <span class="album-carousel-dot" onclick="albumCarouselGoTo(this, {{ album.photos.size }})"></span>
             {% endif %}
+          </div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
