@@ -31,28 +31,49 @@ permalink: /business/
       <div class="biz-album" data-category="{{ album_key }}">
         <div class="album-title">{{ album.title }}</div>
         {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
+        {% assign total_slides = album.photos.size %}{% if album.video_id %}{% assign total_slides = total_slides | plus: 1 %}{% endif %}
         <div class="album-carousel">
           <div class="album-carousel-track">
             {% for photo in album.photos %}
-            <figure class="album-carousel-slide">
+            <figure class="album-carousel-slide{% if photo.video_id %} album-carousel-slide--photo-video{% endif %}">
+              {% if photo.video_id %}
+              {% assign vid = photo.video_id | split: '?' | first %}
+              <div class="album-video-embed album-video-embed--photo">
+                {% if forloop.first %}
+                <iframe src="https://www.youtube.com/embed/{{ vid }}?autoplay=1&mute=1&loop=1&playlist={{ vid }}&controls=0&modestbranding=1&playsinline=1&rel=0" title="{{ photo.caption | default: album.title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% else %}
+                <iframe data-src="https://www.youtube.com/embed/{{ vid }}?autoplay=1&mute=1&loop=1&playlist={{ vid }}&controls=0&modestbranding=1&playsinline=1&rel=0" title="{{ photo.caption | default: album.title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% endif %}
+              </div>
+              {% else %}
               {% if forloop.first %}
               <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
               {% else %}
               <img data-src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
               {% endif %}
+              {% endif %}
               {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
             </figure>
             {% endfor %}
+            {% if album.video_id %}
+            {% assign avid = album.video_id | split: '?' | first %}
+            <figure class="album-carousel-slide album-carousel-slide--video">
+              <div class="album-video-embed">
+                <iframe src="https://www.youtube.com/embed/{{ avid }}" title="{{ album.title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </figure>
+            {% endif %}
           </div>
-          {% if album.photos.size > 1 %}
+          {% if total_slides > 1 %}
           <button class="album-carousel-btn album-carousel-prev" aria-label="上一張" onclick="albumCarouselMove(this, -1)">‹</button>
           <button class="album-carousel-btn album-carousel-next" aria-label="下一張" onclick="albumCarouselMove(this, 1)">›</button>
           <div class="album-carousel-dots">
             {% for photo in album.photos %}
             <span class="album-carousel-dot{% if forloop.first %} active{% endif %}" onclick="albumCarouselGoTo(this, {{ forloop.index0 }})"></span>
             {% endfor %}
-          </div>
-          {% endif %}
+            {% if album.video_id %}
+            <span class="album-carousel-dot" onclick="albumCarouselGoTo(this, {{ album.photos.size }})"></span>
+            {% endif %}
         </div>
       </div>
       {% endfor %}
@@ -118,28 +139,49 @@ permalink: /business/
       <div class="biz-album" data-category="{{ album_key }}">
         <div class="album-title">{{ album.title }}</div>
         {% if album.link %}<a class="album-link" href="{{ album.link }}" target="_blank" rel="noopener">立即查看 →</a>{% endif %}
+        {% assign total_slides = album.photos.size %}{% if album.video_id %}{% assign total_slides = total_slides | plus: 1 %}{% endif %}
         <div class="album-carousel">
           <div class="album-carousel-track">
             {% for photo in album.photos %}
-            <figure class="album-carousel-slide">
+            <figure class="album-carousel-slide{% if photo.video_id %} album-carousel-slide--photo-video{% endif %}">
+              {% if photo.video_id %}
+              {% assign vid = photo.video_id | split: '?' | first %}
+              <div class="album-video-embed album-video-embed--photo">
+                {% if forloop.first %}
+                <iframe src="https://www.youtube.com/embed/{{ vid }}?autoplay=1&mute=1&loop=1&playlist={{ vid }}&controls=0&modestbranding=1&playsinline=1&rel=0" title="{{ photo.caption | default: album.title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% else %}
+                <iframe data-src="https://www.youtube.com/embed/{{ vid }}?autoplay=1&mute=1&loop=1&playlist={{ vid }}&controls=0&modestbranding=1&playsinline=1&rel=0" title="{{ photo.caption | default: album.title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% endif %}
+              </div>
+              {% else %}
               {% if forloop.first %}
               <img src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
               {% else %}
               <img data-src="{% include resolve_image.html src=photo.src %}" alt="{{ photo.caption | default: album.title }}" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
               {% endif %}
+              {% endif %}
               {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
             </figure>
             {% endfor %}
+            {% if album.video_id %}
+            {% assign avid = album.video_id | split: '?' | first %}
+            <figure class="album-carousel-slide album-carousel-slide--video">
+              <div class="album-video-embed">
+                <iframe src="https://www.youtube.com/embed/{{ avid }}" title="{{ album.title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </figure>
+            {% endif %}
           </div>
-          {% if album.photos.size > 1 %}
+          {% if total_slides > 1 %}
           <button class="album-carousel-btn album-carousel-prev" aria-label="上一張" onclick="albumCarouselMove(this, -1)">‹</button>
           <button class="album-carousel-btn album-carousel-next" aria-label="下一張" onclick="albumCarouselMove(this, 1)">›</button>
           <div class="album-carousel-dots">
             {% for photo in album.photos %}
             <span class="album-carousel-dot{% if forloop.first %} active{% endif %}" onclick="albumCarouselGoTo(this, {{ forloop.index0 }})"></span>
             {% endfor %}
-          </div>
-          {% endif %}
+            {% if album.video_id %}
+            <span class="album-carousel-dot" onclick="albumCarouselGoTo(this, {{ album.photos.size }})"></span>
+            {% endif %}
         </div>
       </div>
       {% endfor %}
